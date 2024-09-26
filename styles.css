@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.navBar {
+    display: flex; 
+    background-color: #16151e;
+    padding: 0%;
+    width: 100%;
+    height: 10%;
+}
+
+.navName {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    text-align:left;
+    justify-content: center;
+    align-items: center;
+    color: rgb(231, 228, 214);
+    font-family: Verdana;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.navItem {
+    display: flex;
+    width: 10%;
+    height: 100%;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    color: rgb(231, 228, 214);
+    font-family: Verdana;
+    font-size: large;
+}
+
+.mainContainer{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    background-color: #FF0000;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.centerCard{
+    display: flex;
+    width: 60%;
+    height: 60%;
+    background-color: rgb(231, 228, 214);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
