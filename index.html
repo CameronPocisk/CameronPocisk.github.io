@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cameron Pocisk personal website</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="Boids.js"></script>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -19,11 +20,23 @@
     </div>
     
     <!-- MAIN PAGE --> 
-    <div class = "mainContainer">
-        <!-- Center Card -->
-        <div class="centerCard"> Card </div>
-        <!-- script -->
-    </div>
+    <canvas class = "mainContainer" id = "boidBackground">
+    </canvas>
+    <div class="centerCard"> Card </div>
+    <script>
+        // Generate a canvas that will resize
+        const canvas = document.getElementById("boidBackground");
+        function ReportWindowSize(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", ReportWindowSize);
+        ReportWindowSize();
+        
+        // Start boids on canvas with canvas and #boids
+        const boidSim = new BoidScape(canvas, 4);
+        boidSim.StartBoidProgram();
+    </script>
 
 </body>
 </html>

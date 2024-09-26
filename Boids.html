@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <script src="Boids.js"></script>
+    <body style="padding: 0; margin: 0; overflow: hidden;">
+        
+        <canvas id="boidDiv">
+            Canvas didnt spawn in
+        </canvas>
+        <script>
+            // Generate a canvas that will resize
+            const canvas = document.getElementById("boidDiv");
+            function ReportWindowSize(){
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener("resize", ReportWindowSize);
+            ReportWindowSize();
+            
+            // Start boids on canvas with canvas and #boids
+            const boidSim = new BoidScape(canvas, 4);
+            boidSim.StartBoidProgram();
+        </script>
+
+    </body>
+</html>
