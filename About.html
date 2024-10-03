@@ -26,7 +26,8 @@
         </canvas>
         
         <div class= "centerCard"> Card </div>
-        
+        <img src="CameronPociskResume.pdf" alt="Italian Trulli">
+
         <script>
             const canvas = document.getElementById("boidBackground");
             function ReportWindowSize(){
@@ -37,7 +38,7 @@
             ReportWindowSize();
             
             // Start boids on canvas with canvas and #boids
-            const boidSim = new BoidScape(canvas, 6);
+            const boidSim = new BoidScape(canvas, 4);
             boidSim.StartBoidProgram();
         </script>
     </div>
