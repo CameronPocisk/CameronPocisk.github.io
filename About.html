@@ -20,27 +20,15 @@
     </div>
     
     <!-- MAIN PAGE --> 
-    <div class = "mainContainer" id = "Home" >
+    <div style="height: 1124px; width: 100%; 
+    display: flex; justify-content: center; align-items: center;
+    background-color: #272530;">
 
-        <canvas id = "boidBackground" style="height: 100%; width: 100%;"> 
-        </canvas>
-        
-        <div class= "centerCard"> Card </div>
-        <img src="CameronPociskResume.pdf" alt="Italian Trulli">
+        <img src="resume.png"
+        width="740"
+        height="1024"
+        style="border-radius: 15px;">
 
-        <script>
-            const canvas = document.getElementById("boidBackground");
-            function ReportWindowSize(){
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener("resize", ReportWindowSize);
-            ReportWindowSize();
-            
-            // Start boids on canvas with canvas and #boids
-            const boidSim = new BoidScape(canvas, 4);
-            boidSim.StartBoidProgram();
-        </script>
     </div>
 
 </body>
