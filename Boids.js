@@ -14,8 +14,8 @@ class BoidScape{
     angleChangeAvoidingIn = .12,  // How much to turn avoiding
     angleChangeCohesionIn = .03,  // How much to turn to cohere
     angleRandomChangeIn = .04,    // How much to turn randomly
-    widthOfBoidDenomIn = 60,      // fraction of canvas width
-    heightOfBoidDenomIn = 35,     // fraction of canvas height
+    widthOfBoidDenomIn = 75,      // fraction of canvas width
+    heightOfBoidDenomIn = 40,     // fraction of canvas height
     nearStrokeColorIn = "#FFFFFF",
     allStrokeColorIn = "#50409A",
     boidColorIn = "#964EC2",

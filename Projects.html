@@ -20,26 +20,28 @@
     </div>
     
     <!-- MAIN PAGE --> 
-    <div class = "mainContainer">
+    <div style="height: 1024px; width: 100%; 
+    justify-content: center; align-items: center;
+    background-color: #272530;">
 
-        <canvas id = "boidBackground" style="height: 100%; width: 100%;"> 
-        </canvas>
-        
-        <div class= "centerCard"> Card </div>
-        
-        <script>
-            const canvas = document.getElementById("boidBackground");
-            function ReportWindowSize(){
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener("resize", ReportWindowSize);
-            ReportWindowSize();
-            
-            // Start boids on canvas with canvas and #boids
-            const boidSim = new BoidScape(canvas, 4);
-            boidSim.StartBoidProgram();
-        </script>
+        <div class ="projectContainer">
+            <!-- <div class="projectDescription"></div> -->
+            <img src = "BOT.jpg"
+                width="60%"
+                height="80%"
+                style="border-radius: 15px;">
+        </div>
+
+        <!-- <div class ="projectContainer"></div>
+            <div style="width: 50%; height: 600px">
+                desc
+            </div>
+            <img src = "BoidPic.png"
+                width="320px"
+                height="512px"
+                style="border-radius: 15px;">
+        </div> -->
+
     </div>
 
 </body>

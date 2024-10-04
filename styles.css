@@ -65,15 +65,37 @@ body {
 .centerCard{
     position: absolute;
     display: flex;
+    flex-direction: column;
     width: 50%;
     height: 50%;
     background-color: rgba(231, 228, 214, .8);
     justify-content: center;
     align-items: center;
     border-radius: 12px;
+    font-family: Verdana;
 }
 
 .customizeCollapsable{
     width: 100;
     height: 100;
+}
+
+.projectContainer{
+    display: flex;
+    width: 90%;
+    height: 1024px;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectDescription{
+    width: 45%;
+    height: 90%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(231, 228, 214, .8);
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-family: Verdana;
 }
