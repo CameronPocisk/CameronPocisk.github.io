@@ -12,12 +12,7 @@
     <div class = "navBar">
         <div style="width: 2%"> <!-- EMPTY SPACE --> </div>
         <a   class="navName" href="https://cameronpocisk.github.io/">Cameron Pocisk </a>
-        <div style="width: 10%"> <!-- EMPTY SPACE --> </div>
-
-        <!-- <button type="button" class="navItem" href= "index.html"> Boids </button>
-        <div class="customizeCollapsable"> test </div> -->
-        
-        <div style="width: 10%"> <!-- EMPTY SPACE --> </div>
+        <div style="width: 30%"> <!-- EMPTY SPACE --> </div>
         <a class="navItem" href= "Boids.html"> Boids </a>
         <a class="navItem" href= "Projects.html"> Projects </a>
         <a class="navItem" href= "About.html"> About Me </a>
@@ -27,14 +22,22 @@
     </div>
     
     <!-- MAIN PAGE --> 
-    <div class = "mainContainer">
+    <div 
+    style="height: 100%; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+    background-color: #272530;">
 
         <canvas id = "boidBackground" style="height: 100%; width: 100%;"> 
         </canvas>
-        
-        <!-- <div class= "centerCard"> Card </div> -->
-        
-        <script>
+
+        <div class= "centerCard" style="height: 30%;">
+            <p style="font-size: x-large; font-weight: bold; "> UC User Interface I CS5167 </p> 
+            <p style="font-size: small; font-weight: bold; "> by Cameron Pocisk </p> 
+            <br>
+        </div>
+    </div>
+
+    <script>
             const canvas = document.getElementById("boidBackground");
             function ReportWindowSize(){
                 canvas.width = window.innerWidth;
@@ -44,20 +47,13 @@
             ReportWindowSize();
             
             // Start boids on canvas with canvas and #boids
-            // This page will make a random simulation
             const boidSim = new BoidScape({ 
-                canvasRef: canvas,
-                numberOfBoids: Math.random() * 15, 
-                boidColorIn: `#${Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')}`, // random color from google
-                velocityForBoids: 1 + Math.random() * 4,
-                nearStrokeColorIn: `#${Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')}`,
-                allStrokeColorIn: `#${Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0')}`,
-                shouldDrawToAllIn: Math.random() > .8, // .8 is literally personal preference
-                shouldDrawToNearIn: Math.random() > .2
+                canvasRef: canvas, 
+                numberOfBoids: 3, 
+                boidColorIn: "#7565A4" // inverse of Sage
             });
             boidSim.StartBoidProgram();
         </script>
-    </div>
 
 </body>
 </html>

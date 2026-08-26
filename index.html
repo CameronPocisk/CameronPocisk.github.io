@@ -16,6 +16,8 @@
         <a class="navItem" href= "Boids.html"> Boids </a>
         <a class="navItem" href= "Projects.html"> Projects </a>
         <a class="navItem" href= "About.html"> About Me </a>
+        <a class="navItem" href= "ComputerGraphics.html"> Computer Graphics </a>
+        <a class="navItem" href= "UserInterface.html"> User Interface </a>
         <div style="width: 3%"> <!-- EMPTY SPACE --> </div>
     </div>
     
@@ -32,7 +34,7 @@
             <p style="margin-bottom: 2%;"> • I've always loved CS, particularly embedded/low level programming</p> 
             <p> • I love Cincinnati and I'm a Bengals fan 🐅</p>
             <hr style="margin: 3%; height: 1.5px; width: 80%; background-color: black; border: none;">
-            <p style="margin-bottom: 2%" > • Look at the <strong>'Boids'</strong> tab for more info on what's behind this</p>
+            <p style="margin-bottom: 2%" > • Look at the <strong>'Boids'</strong> tab for a fun random simulation</p>
             <p style="margin-bottom: 2%" > • Learn about some other projects I've done in <strong>'Projects'</strong></p>
             <p style="margin-bottom: 2%" > • See my resume in the <strong>'About'</strong> section</p>
         </div>
@@ -47,7 +49,10 @@
             ReportWindowSize();
             
             // Start boids on canvas with canvas and #boids
-            const boidSim = new BoidScape(canvas, 6);
+            const boidSim = new BoidScape({
+                canvasRef: canvas, 
+                numberOfBoids: 6,
+            });
             boidSim.StartBoidProgram();
         </script>
     </div>

@@ -5,7 +5,7 @@ class BoidScape{
     numBoids;
 
     // Contrsuctor with complete customizatoin
-    constructor(
+    constructor({
     canvasRef,
     numberOfBoids = 6,
     velocityForBoids = 4,         // Speed of each boid
@@ -24,8 +24,10 @@ class BoidScape{
     shouldAllignIn = true,
     shouldCohereIn = true,
     shouldDrawToNearIn = true,
-    shouldDrawToAllIn = true){
+    shouldDrawToAllIn = true
+    }){
 
+        console.log("bruh");
         // General Items
         this.boidScapeCanvas = canvasRef;
         this.boidScapeCanvas.width = canvasRef.clientWidth; // This was a big bug fix, super annoying but makes sure that 
@@ -280,7 +282,9 @@ class Boid extends DrawableObject{
         }
     }
 
-    DrawLineToAllBoids(allBoids, canvasContextIn, strokeColor){
+    DrawLineToAllBoids(allBoids, canvasContextIn, strokeColor, shouldDrawToAll){
+        if(shouldDrawToAll != null && !shouldDrawToAll) {return;}
+
         for(let i = 0; i < allBoids.length; i++){
             canvasContextIn.beginPath();
             canvasContextIn.moveTo(this.xPosition, this.yPosition);
@@ -289,7 +293,9 @@ class Boid extends DrawableObject{
             canvasContextIn.stroke();
         }
     }
-    DrawLineToNearbyBoids(canvasContextIn, strokeColor){
+    DrawLineToNearbyBoids(canvasContextIn, strokeColor, shouldDrawToNear){
+        if(shouldDrawToNear != null && !shouldDrawToNear) {return;}
+
         for(let i = 0; i < this.nearbyBoids.length; i++){
             canvasContextIn.beginPath();
             canvasContextIn.moveTo(this.xPosition, this.yPosition);
@@ -325,8 +331,8 @@ class Boid extends DrawableObject{
         this.CalculateTrigAngleFactors();
         
         // Visual for nearby
-        this.DrawLineToAllBoids(boidScapeIn.everyBoid, boidScapeIn.boidScapeContext, boidScapeIn.allStrokeColor);
-        this.DrawLineToNearbyBoids(boidScapeIn.boidScapeContext, boidScapeIn.nearStrokeColor);
+        this.DrawLineToAllBoids(boidScapeIn.everyBoid, boidScapeIn.boidScapeContext, boidScapeIn.allStrokeColor, boidScapeIn.shouldDrawToAll);
+        this.DrawLineToNearbyBoids(boidScapeIn.boidScapeContext, boidScapeIn.nearStrokeColor, boidScapeIn.shouldDrawToNear);
         
         // Handle angle
         this.RandomAngleChange(boidScapeIn.angleRandomChange, boidScapeIn.RandomNumberBetween); // fun fun
