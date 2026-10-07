@@ -1,65 +1,234 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen Pen Documentation</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="Boids.js"></script>
-</head>
-<body>
-    <!-- NAVBAR  w/ clicks--> 
-    <div class = "navBar">
-        <div style="width: 2%"> <!-- EMPTY SPACE --> </div>
-        <a   class="navName" href="https://cameronpocisk.github.io/">Cameron Pocisk </a>
-        <div style="width: 30%"> <!-- EMPTY SPACE --> </div>
-        <a class="navItem" href= "Boids.html"> Boids </a>
-        <a class="navItem" href= "Projects.html"> Projects </a>
-        <a class="navItem" href= "About.html"> About Me </a>
-        <a class="navItem" href= "ComputerGraphics.html"> Computer Graphics </a>
-        <a class="navItem" href= "UserInterface.html"> User Interface </a>
-        <div style="width: 3%"> <!-- EMPTY SPACE --> </div>
-    </div>
-    
-    <!-- MAIN PAGE --> 
-    <div 
-    style="height: 100%; width: 100%;
-    display: flex; justify-content: center; align-items: center;
-    background-color: #272530;">
-
-        <canvas id = "boidBackground" style="height: 100%; width: 100%;"> 
-        </canvas>
-
-        <div class= "centerCard" style="height: 30%;">
-        <!-- For this center card, I will probably make hypertext links that direct to new pages -->
-
-            <p style="font-size: x-large; font-weight: bold; "> UC User Interface I CS5167 </p> 
-            <p style="font-size: small; font-weight: bold; "> by Cameron Pocisk </p> 
-
-            <!-- Direct to the PenPen Demo page -->
-            <!-- Direct to the PenPen Documentation page -->
-             <a class="navItem" href= "Boids.html"> PenPenDocumentation </a>
-            <br>
-        </div>
-    </div>
-
-    <script>
-            const canvas = document.getElementById("boidBackground");
-            function ReportWindowSize(){
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener("resize", ReportWindowSize);
-            ReportWindowSize();
-            
-            // Start boids on canvas with canvas and #boids
-            const boidSim = new BoidScape({ 
-                canvasRef: canvas, 
-                numberOfBoids: 3, 
-                boidColorIn: "#7565A4" // inverse of Sage
-            });
-            boidSim.StartBoidProgram();
-        </script>
-
-</body>
-</html>
+<h1 id="describe-the-project">Describe the project</h1>
+<p>
+  This project (PenPen) is a new take on a smart pen. This pen has all of the
+  standard smart pen features, and then a few more. What seperates this pen from
+  other smart pens, is its control panel, and functional back.
+</p>
+<h3 id="the-control-panel">The Control Panel</h3>
+<ul>
+  <li>
+    First, the screen. This shows the user the following information (Left to
+    right)
+    <ul>
+      <li>A preview of the brush</li>
+      <li>The ‘control-mode’</li>
+      <li>Icons for the 2 selected macros</li>
+    </ul>
+  </li>
+  <li>
+    Next, there are 6 total buttons, seperated into a top and bottom row.
+    <ul>
+      <li>Top left and bottom left buttons activate the selected macros</li>
+      <li>
+        Top middle and bottom middle buttons change the control-mode, which lets
+        you edit properties which can be controlled by …
+      </li>
+      <li>
+        … Top right and bottom right buttons increment or decrement the property
+        of the selected control mode. ### Smart Back Besides the control panel,
+        the back of the pen is also ‘smart’.
+      </li>
+    </ul>
+  </li>
+  <li>
+    The user can move a dial to point to an icon which determines how the back
+    will behave. It can…
+    <ul>
+      <li>Highlight (A translucent rectangle like pen mode)</li>
+      <li>
+        Erase (Highly requested feature that lets the user erase their drawing
+        with the back of the pen)
+      </li>
+      <li>
+        Eyedrop (Since this is on the physical pen, the eyedropper tool will
+        make the pen take the color of whatever real world object it touches).
+      </li>
+    </ul>
+  </li>
+</ul>
+<h1 id="design-work">Design Work</h1>
+<p>
+  before my main design emerged, I went through a series of interviews,
+  sketching, and feedback.
+</p>
+<p>
+  The first thing I did was interview smart pen users of all kinds. I figured
+  out the essence of what they like and dislike about smart pens. I then figured
+  out everything the users will need and created design challenges out of them
+</p>
+<p>
+  After finding my desing challengs, I ‘solved’ three of them with 10-plus-10
+  sketches. Here they are!
+</p>
+<h4
+  id="design-challenge-1---the-pen-can-be-used-by-artists-and-note-takers-efficently"
+>
+  Design Challenge #1 - The pen can be used by artists and note takers
+  efficently
+</h4>
+<p>
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10One.jpg"
+    alt="#1 part 1"
+  />
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10OnePartTwo.jpg"
+    alt="#1 part 2"
+  />
+</p>
+<h4 id="design-challenge-2---the-pen-has-different-modes-for-different-users">
+  Design Challenge #2 - The pen has different modes for different users
+</h4>
+<p>
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10Two.jpg"
+    alt="#2 part 1"
+  />
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10TwoPartTwo.jpg"
+    alt="#2 part 2"
+  />
+</p>
+<h4 id="design-challenge-3---the-pen-has-a-high-quality-feel">
+  Design Challenge #3 - The pen has a high quality feel
+</h4>
+<p>
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10Three.jpg"
+    alt="#3 part 1"
+  />
+  <img
+    src="../src\assets\UIProject1\DesignChallenge10plus10ThreePartTwo.jpg"
+    alt="#3 part 2"
+  />
+</p>
+<p>
+  After getting feedback (Very valuable) on the results of the skeches, I put
+  together a prototype on draw.io
+  <img
+    src="../src\assets\UIProject1\PenPenFinalUiPrototype.png"
+    alt="Prototype"
+  />
+</p>
+<p>
+  There are two main components in my design. The control panel and the back
+  feature.
+</p>
+<h3 id="control-panel-design">Control Panel Design</h3>
+<pre><code>- This is a design with real buttons that allows the user to quickly change the attributes of their brush, and the pen itself.
+- There are 6 buttons, the two left buttons have &#39;neutral&#39; icons on them since they activate the macros. The remaining 4 buttons allow the user to select what they are controlling, and increment or decrement that values.
+- Users typically needed just a minute to fiddle around with the screen to understand what is going on. There is a lot they can learn but the idea is very simple. </code></pre>
+<h3 id="back-feature-design">Back Feature Design</h3>
+<pre><code>- The back of the pen is some advanced hardware that has tons of real-functionalities (Everything you would want in a pen-shaped object).
+- There is a dial which points to the mode the dial will be in. 
+- The most requested feature is on here (back to erase)
+- But users have the option to do more if they would like. 
+- Such as use it as an eyedropper tool (Artists), or highlight(Note-takers). </code></pre>
+<h1 id="explain-how-you-implemented-this-application-libraries-code-structure.">
+  Explain how you implemented this application (libraries, code structure….)
+</h1>
+<p>
+  This is my first svelete project, so it took me a second to figure out how to
+  best structure the code. I decided that I was going to try to make one
+  singleton instance of a class (<code>penClass</code>) to represent the whole
+  Pen. Svelte allows you to do this with ‘setContext’ and ‘getContext’. Using
+  these methods I allowed the sub components interact with singleton (Set data
+  and Get data).
+</p>
+<p>
+  Even though I was following a singleton pattern, I still tried to make all of
+  the code very modular. All of the sub-components have their individular
+  functionality in the <code>&lt;script&gt;</code> section of their
+  <code>.svelte</code> file. Also, I tried to avoid any global styling and keep
+  all the style information in each component (Also using ratios where
+  possible).
+</p>
+<h3 id="fun-components.">Fun Components.</h3>
+<p>
+  While developing, I was able to get creative with a few of my components /
+  implementations.
+</p>
+<h4 id="scrolling-background">Scrolling Background</h4>
+<p>
+  I am hoping that some of you reading this may wonder how exactly the
+  background of this website renders? The truth is that none of the divs are
+  actually moving. There is a background that scrolls, but is actually just a
+  gif. But not any gif!! I could only find one moving grid pattern online (I
+  know right), and I used an editor to transform the gif into the background
+</p>
+<p>
+  <strong>Original</strong>
+  <img src="../src\assets\UIProject1\gridOG.gif" alt="OG grid" />
+  <strong>Rotated</strong>
+  <img src="../src\assets\UIProject1\gridRotated.gif" alt="Rotated grid" />
+  <strong>Quadrupled (twice (16’d?))</strong>
+  <img
+    src="../src\assets\UIProject1\GridQuadrupled.gif"
+    alt="Quadrupled grid"
+  />
+  <strong>Colorized</strong>
+  <img src="../src\assets\UIProject1\GreyLargeGrid.gif" alt="Final grid" />
+</p>
+<p>
+  Okay, so what the background moves. What about the drawing? The entire canvas
+  is on a timer. Each time it fires, the script creates a new invisible canvas
+  element and copies the current one over there. Once that is done, the main
+  canvas is cleared, and the copied content is drawn onto the main canvas one
+  increment higher. It is then drawn a second time below so that the content is
+  wrapped. Boom - whole thing moving up and down :)
+</p>
+<h4 id="macro-buttons">Macro Buttons</h4>
+<p>
+  Even though the control panel was kind of a pain to implement, I enjoyed
+  coming up with a few macros. All of the macros are super powerful even in the
+  context of my webpage. If this were a real smart pen on a real drawing
+  interface, I think the macros could be the best part of the pen. I imagine
+  that undo and redo would be super popular but users could just take this so
+  far. The implementation is pretty straightforward, but it was a fun way to
+  allow the user to do a lot more.
+</p>
+<h1 id="future-work">Future work</h1>
+<p>
+  Since this project is also a little bit of a drawing enviornment, adding more
+  features would be a lot of work. If I could add one thing, I would add undo
+  and redo macros. I think artists love that. The second tthing I would want to
+  add would be a color-pallete profile. If there was a way to cycle through the
+  eye-droppered colors, I think artists would love it! Onto the elements that
+  are more realated to this project, I would want to add some textures to my
+  pen. I did give it a little try on the back of the pen, but it washed out the
+  color more than it made it look metallic. Also, I would want to do a little
+  more with the status LED I have, right now it really just indicates that it’s
+  on, but with some more work I am sure I could make it a little more reactive.
+  There are a few more smaller things I would want to try also, I wish I made
+  the screen more animated. I wish I could add some customization options for
+  the background, and pen apperance. I never got too knowledgable on how the
+  chroma library works so sometimes the color editing loses the pens hue and
+  washes it out.
+</p>
+<h1 id="ai-documentation--describe-how-you-used-ai-if-you-used-it.">
+  AI documentation- describe how you used AI, if you used it.
+</h1>
+<p>
+  Even though using AI would speed up my development, I used minimal AI. I
+  avoided using it because I think its a cheap shortcut when used in learning
+  settings. I would say that around 4% of my code is AI generated. None of my
+  code was vibe coded or done by an agent. I used AI as more of a better google
+  to see what APIs I have access to and things like that. For example to figure
+  out what methods were out there to copy the canvas, I asked AI. But I figured
+  out how to make the background wrap myself.
+</p>
+<h1 id="include-a-2-3-minute-demo-video-showing-your-interface-in-action.">
+  Include a 2-3 minute demo video, showing your interface in action.
+</h1>
+<p>Video Link: https://youtu.be/OZOoG_xfuJE</p>
+<h1
+  id="include-a-link-to-your-source-code-on-github-and-a-link-to-the-publicly-hosted-application."
+>
+  Include a link to your source code on github and a link to the publicly hosted
+  application.
+</h1>
+<p>
+  Vercel hosted link: https://uipenpen.vercel.app/ Github Link:
+  https://github.com/CameronPocisk/UcUserInterface/tree/main/Project1 Video
+  Link: https://youtu.be/OZOoG_xfuJE
+</p>
