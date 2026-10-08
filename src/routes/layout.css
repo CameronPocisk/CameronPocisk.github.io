@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+
+@theme static {
+  --color-primary: #272530;
+  --color-offBlack: #272530;
+  --color-secondary: #E0E0E0;
+  --color-offWhite: #E0E0E0;
+  --color-accent: #e49e1b;
+  --color-accent-accent: #1d5ae2;
+  --color-DarkGrey: #3A3D40,
+  --color-DarkGreyAlt: #4A4D50,
+  --color-LightGrey: #8A8D8F,
+  --color-LightGreyAlt: #9B9E9F
+}
